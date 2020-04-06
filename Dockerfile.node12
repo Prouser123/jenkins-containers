@@ -4,11 +4,13 @@ FROM node:12-alpine
 
 FROM jcxldn/jenkins-containers:base
 
-COPY --from=0 /usr/bin/node /usr/bin/node
-COPY --from=0 /usr/bin/npm /usr/bin/npm
+COPY --from=0 /usr/local/bin/node /usr/local/bin/node
+COPY --from=0 /usr/local/bin/npm /usr/local/bin/npm
+COPY --from=0 /usr/local/bin/yarn /usr/local/bin/yarn
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache binutils libstdc++ && \
   strip /usr/bin/node && \
   strip /usr/bin/npm && \
-  apk del binutils
+  apk del binutils && \
+  node -v && npm -v && yarn -v
