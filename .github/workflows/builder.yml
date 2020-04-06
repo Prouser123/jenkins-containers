@@ -24,9 +24,10 @@ jobs:
         name: List Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
       -
+        # Build using all available platforms
         name: Run Buildx (base image)
         run: |
           docker buildx build \
-            --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
+            --platform ${{ steps.buildx.outputs.platforms }} \
             --output "type=image,push=true" \
             -f Dockerfile.base -t jcxldn/jenkins-containers:base .
