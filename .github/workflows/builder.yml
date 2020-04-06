@@ -11,6 +11,13 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v1
+      - 
+        name: Login to docker hub
+        uses: azure/docker-login@v1
+        with:
+          # login-server: contoso.azurecr.io
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
       -
         name: Set up Docker Buildx
         id: buildx
@@ -20,13 +27,6 @@ jobs:
       -
         name: List Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
-      - 
-        name: Login to docker hub
-        uses: azure/docker-login@v1
-        with:
-          # login-server: contoso.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
       -
         name: Run Buildx (base image)
         run: |
