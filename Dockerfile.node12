@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM jcxldn/jenkins-containers:base
 
-// Taken from https://github.com/nodejs/docker-node/blob/master/12/alpine3.10/Dockerfile, but with NPM support only.
+# Taken from https://github.com/nodejs/docker-node/blob/master/12/alpine3.10/Dockerfile, but with NPM support only.
 
 ENV NODE_VERSION 12.16.1
 
