@@ -41,6 +41,6 @@ jobs:
         name: Run Buildx (jdk11-gradle image)
         run: |
           docker buildx build \
-            --platform linux/amd64,linux/arm/v7,linux/arm64,linux/s390x \
+            --platform linux/amd64,linux/arm/v7,linux/arm64 \
             --output "type=image,push=true" \
             -f ubuntu/jdk11-gradle.Dockerfile -t jcxldn/jenkins-containers:jdk11-gradle-ubuntu .
