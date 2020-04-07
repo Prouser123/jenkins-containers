@@ -12,6 +12,6 @@ All images are based on Alpine Linux unless otherwise stated.
 | linux/arm/v6 | :white_check_mark: | :white_check_mark: | :x: [Upstream] |
 | linux/arm/v7 | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | linux/arm64 | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| linux/ppc64le | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| linux/ppc64le | :white_check_mark: | :white_check_mark: | :x: [Gradle] |
 | linux/s390x | :white_check_mark: | :white_check_mark: | :white_check_mark:
 | linux/riscv64 | :x: [Upstream] | :x: [Upstream, x2] | :x: [Upstream]
