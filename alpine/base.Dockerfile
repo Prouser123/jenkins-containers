@@ -1,3 +1,3 @@
 FROM alpine:latest
 
-RUN apk add git
+RUN apk add git curl
