@@ -4,7 +4,7 @@ FROM adoptopenjdk:11-jdk-hotspot
 
 # Use a HTTPS deb mirror.
 RUN apt-get update && apt-get install -y ca-certificates && \
-    sed -i 's/http:\/\/archive.ubuntu.com/https:\/\/ubuntu-cf-cdn.jcx.ovh/' /etc/apt/sources.list
+    sed -i 's/http:\/\/archive.ubuntu.com/https:\/\/ubuntu-cf-cdn.jcx.ovh/' /etc/apt/sources.list && \
     sed -i 's/http:\/\/ports.ubuntu.com/https:\/\/ubuntu-ports-cf-cdn.jcx.ovh/' /etc/apt/sources.list
 
 CMD ["gradle"]
