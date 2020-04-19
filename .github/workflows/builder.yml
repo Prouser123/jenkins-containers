@@ -44,3 +44,10 @@ jobs:
             --platform linux/amd64,linux/arm/v7,linux/arm64 \
             --output "type=image,push=true" \
             -f ubuntu/jdk11-gradle.Dockerfile -t jcxldn/jenkins-containers:jdk11-gradle-ubuntu .
+      -
+        name: Run Buildx (jdk11-mvn image)
+        run: |
+          docker buildx build \
+            --platform linux/amd64,linux/arm/v7,linux/arm64 \
+            --output "type=image,push=true" \
+            -f ubuntu/jdk11-mvn.Dockerfile -t jcxldn/jenkins-containers:jdk11-mvn-ubuntu .
